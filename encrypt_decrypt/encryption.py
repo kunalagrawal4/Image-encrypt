@@ -197,8 +197,8 @@ def main():
         
      
     
-    ArnoldCatEncryption("secret.png", 5)
-    ArnoldCatEncryption("ciphered.png", 7)
+    ArnoldCatEncryption("secret.png",3)
+    ArnoldCatEncryption("ciphered.png", 22)
     if args.display:
         prepared_image.show()
         secret_image.show()

@@ -2,8 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 import os
 from PIL import ImageTk, Image
-import combine2 
-
+import encryption
 
 def choose_File():
     filename = filedialog.askopenfilename()
@@ -14,8 +13,7 @@ def openFileForsecret():
     path = entry2.get()
     window = Toplevel(root)
     window.title(path)
-    window.geometry("600x600")
-    path = entry2.get()
+    window.geometry("1200x1200")
     img = ImageTk.PhotoImage(Image.open(path))
     panel = Label(window, image=img)
     panel.pack(side="bottom", fill="both", expand="yes")
@@ -25,8 +23,7 @@ def openFileForchipher():
     path = entry3.get()
     window = Toplevel(root)
     window.title(path)
-    window.geometry("600x600")
-    path = entry3.get()
+    window.geometry("1200x1200")
     img = ImageTk.PhotoImage(Image.open(path))
     panel = Label(window, image=img)
     panel.pack(side="bottom", fill="both", expand="yes")
@@ -46,10 +43,14 @@ def processing():
     
 def encrypt_image():
     processing()
-    combine2.encrypt(entry1.get())
+    encryption.encrypt(entry1.get())
     label0['text'] = "succesfull"
-    entry2.insert(0,str("D:\project\secret_ArnoldcatEnc.png"))
-    entry3.insert(0,str("D:\project\ciphered_ArnoldcatEnc.png"))
+    path = os.getcwd()
+    path = path + "\secret_ArnoldcatEnc.png"
+    entry2.insert(0,str(path))
+    path = os.getcwd()
+    path = path + "\ciphered_ArnoldcatEnc.png"
+    entry3.insert(0,str(path))
 
 middleFrame = Frame(root)
 middleFrame.pack(side=BOTTOM)

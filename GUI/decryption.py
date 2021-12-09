@@ -13,12 +13,9 @@ import matplotlib.pyplot as plt
 import cv2
 from math import log
 from tqdm import tqdm
-import show
-
 
 def ArnoldCatDecryption(imageName, key):
     img = cv2.imread(imageName)
-    
     for i in range(0,key):
         img = ArnoldCatTransformdec(img)
     img1 = cv2.imread("secret.png")
@@ -35,7 +32,6 @@ def ArnoldCatDecryption(imageName, key):
     return img
 
 def ArnoldCatTransformdec(img):
-
     h,w,_=img.shape
     decrypted_image = np.zeros([h,w,3])
     if h!=w:
@@ -44,9 +40,26 @@ def ArnoldCatTransformdec(img):
         for y in range(0,h):
             decrypted_image[x][y]=img[(x-y)%h][((2*y)-x)%h]
     return decrypted_image
- 
-def decrypt_image(f1,f2):
-    ArnoldCatDecryption(f1, 5)
-    ArnoldCatDecryption(f2, 7)
-    show.decrypted_image()
 
+
+def decrypted_image():
+    infile1 = Image.open(os.path.join(r'ciphered_ArnoldcatDec.png'))
+    infile2 = Image.open(os.path.join(r'secret_ArnoldcatDec.png'))
+    infile2 = infile2.convert("1")
+    infile1 = infile1.convert("1")
+    outfile = Image.new('1', infile1.size, color=255)
+    for x in range(infile1.size[0]):
+        for y in range(infile2.size[1]):
+            outfile.putpixel((x, y), max(infile2.getpixel((x, y)), infile1.getpixel((x, y))))
+
+    outfile.save('original.png')
+
+
+def decrypt_image(f1,f2):
+    f1 = Image.open(f1)
+    f2= Image.open(f2)
+    f1.save("secret_arnoldenc.png")
+    f2.save("ciphered_arnoldenc.png")
+    ArnoldCatDecryption("secret_arnoldenc.png", 3)
+    ArnoldCatDecryption("ciphered_arnoldenc.png", 22)
+    decrypted_image()

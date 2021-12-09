@@ -88,5 +88,5 @@ def encrypt(filename):
     ciphered_image.save("ciphered.png")
     secret_image.save("secret.png")
     prepared_image.save("prepared_message.png")
-    ArnoldCatEncryption("secret.png", 5)
-    ArnoldCatEncryption("ciphered.png", 7)
+    ArnoldCatEncryption("secret.png", 3)
+    ArnoldCatEncryption("ciphered.png", 22)

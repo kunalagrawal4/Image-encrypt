@@ -2,8 +2,7 @@ from tkinter import *
 from tkinter import filedialog
 import os
 from PIL import ImageTk, Image
-import show
-import test
+import decryption
 
 
 
@@ -47,16 +46,20 @@ bottomFrame = Frame(root)
 bottomFrame.pack(side=BOTTOM)
 
 
-label0 = Label(decrypt, text = "hey" ,width = 125)
+label0 = Label(decrypt, text = "" ,width = 125)
+
 def processing():
     label0['text'] = "processing"
     
     
-def decrypt_image():
+def decrypt_image_1():
     processing()
-    test.decrypt_image(entry1.get(),entry2.get())
+    f1=entry1.get()
+    f2=entry2.get()
+    decryption.decrypt_image(f1,f2)
     label0['text'] = "succesfull"
-    entry3.insert(0,str("D:\project\original.png"))
+    path = os.getcwd() + "\original.png"
+    entry3.insert(0,str(path))
 
     
 label_1 = Label(frame1, text ="Images to be dencrypted : ",width = 125)
@@ -72,7 +75,7 @@ entry3 = Entry(bottomFrame,width =100)
 button4 = Button(bottomFrame, text="Open Image",command = openFileForchipher)
 
 
-button3 = Button(bottomFrame, text = "Generate Arnold Cat Map",command = decrypt_image , width=20)
+button3 = Button(bottomFrame, text = "Generate Arnold Cat Map",command = decrypt_image_1 , width=20)
 
 
 label_1.pack(side = TOP)
