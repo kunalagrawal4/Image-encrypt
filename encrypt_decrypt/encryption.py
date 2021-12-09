@@ -24,10 +24,7 @@ from tqdm import tqdm
 
 __version__ = "0.1"
 
-im= os.path.exists('./message.png')
-if im is False:
-    url = input("paste link for the file: ")
-    filename = wget.download(url,'message.png')
+
     
 def get_options():
     parser = argparse.ArgumentParser(description='Visual cipher image generator.')

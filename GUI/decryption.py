@@ -63,3 +63,7 @@ def decrypt_image(f1,f2):
     ArnoldCatDecryption("secret_arnoldenc.png", 3)
     ArnoldCatDecryption("ciphered_arnoldenc.png", 22)
     decrypted_image()
+    if os.path.exists("secret_arnoldenc.png"):
+        os.remove("secret_arnoldenc.png")
+    if os.path.exists("ciphered_arnoldenc.png"):
+        os.remove("ciphered_arnoldenc.png")
