@@ -1,14 +1,14 @@
 TO Run this project 
 you need to download all the required modules 
 
-ftkinter
-os
-PIL (pillow-python)
-openCV
-argspars
-numpy
-logging
-random
+ftkinter ,
+os,
+PIL (pillow-python),
+openCV,
+argspars,
+numpy,
+logging,
+random.
 
 you can dowload all using pip or curl
 
