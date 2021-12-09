@@ -68,7 +68,7 @@ button1 = Button(topFrame, text = "Select Image",command = choose_File)
 
 entry2 = Entry(middleFrame,width =100 )
 button2 = Button(middleFrame, text = "Select Image",command = choose_File1)
-label_1 = Label(decrypt, text ="Images to be dencrypted : ",width = 125)
+# label_1 = Label(decrypt, text ="Images to be dencrypted : ",width = 125)
 
 label_2 = Label(bottomFrame, text ="Images to be dencrypted : ",width = 125)
 entry3 = Entry(bottomFrame,width =100)

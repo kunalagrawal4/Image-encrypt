@@ -1,18 +1,13 @@
 from __future__ import division, print_function, unicode_literals
 
 import os
-import sys
 import random
 from PIL import Image
 import argparse
 import logging
-import wget
 import numpy as np
-from matplotlib.pyplot import imshow
-import matplotlib.pyplot as plt
 import cv2
-from math import log
-from tqdm import tqdm
+
 
 def ArnoldCatDecryption(imageName, key):
     img = cv2.imread(imageName)

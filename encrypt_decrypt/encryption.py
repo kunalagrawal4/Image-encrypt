@@ -6,13 +6,8 @@ import random
 from PIL import Image
 import argparse
 import logging
-import wget
 import numpy as np
-from matplotlib.pyplot import imshow
-import matplotlib.pyplot as plt
 import cv2
-from math import log
-from tqdm import tqdm
 
 
 # https://drive.google.com/uc?id=121nAa2VP6d8NedUWqzuoncqfKFm_ttWJ

@@ -70,7 +70,7 @@ entry2 = Entry(middleFrame,width =80 )
 button3 = Button(middleFrame, text="Open Image",command = openFileForsecret)
 
 entry3 = Entry(bottomFrame,width =80)
-button5 = Button(bottomFrame, text="Open Image",command = openFileForchipher)
+button4 = Button(bottomFrame, text="Open Image",command = openFileForchipher)
 
 label_1.pack(side = TOP)
 entry1.pack(side = TOP)
@@ -82,7 +82,7 @@ entry2.pack(side=LEFT)
 button3.pack(side=LEFT)
 
 entry3.pack(side = LEFT)
-button5.pack(side = LEFT)
+button4.pack(side = LEFT)
 
 
 root.mainloop()
