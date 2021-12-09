@@ -49,4 +49,8 @@ def decrypt_image():
     ArnoldCatDecryption("secret_ArnoldcatEnc.png", 5)
     ArnoldCatDecryption("ciphered_ArnoldcatEnc.png", 7)
     show.decrypted_image()
+    img=Image.open('original.png')
+    img.show()
+
+decrypt_image()
 
